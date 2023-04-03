@@ -283,9 +283,12 @@ color:#DEDEDE
     padding-top: 7px;
     border:none;
 }
+.menu-grid-btn:hover{
+background-color: #F37335;
+cursor: pointer;
+}
 .menu-grid-icon {
-    
-color:#443737;
+    color:#443737;
 }
 .menu-grid-text {
     font-weight: 700;

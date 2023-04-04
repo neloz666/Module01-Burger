@@ -1,22 +1,26 @@
 <!DOCTYPE html>
 <html lang="ru">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@600;700;800;900&family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@600;700;800;900&family=Open+Sans:wght@400;700&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/main.css">
     <title>Burger</title>
 </head>
+
 <body>
-    <header>
+    <header id="headerTop">
         <div class="container">
             <div class="header">
                 <div class="header-item">
-                        <a href="index.html" class="header-logo"></a>
+                    <a href="index.html" class="header-logo"></a>
                     <nav>
                         <ul class="header-nav">
                             <li><a href="index.html" class="active">Главная</a></li>
@@ -37,14 +41,14 @@
         </div>
     </header>
     <div class="bg">
-      <div class="contanier">
-        <ul class="breadcrumbs">
-            <li><a href="index.html">Главная</a></li>
-            <li><a>Меню</a></li>
-        </ul>
-        <h1 class="title">Наше Меню</h1>
-        <p class="description">Выбирай из предложенного ассортимента и мы доставим блюдо в течениe часа</p>
-      </div>
+        <div class="contanier">
+            <ul class="breadcrumbs">
+                <li><a href="index.html">Главная</a></li>
+                <li><a>Меню</a></li>
+            </ul>
+            <h1 class="title">Наше Меню</h1>
+            <p class="description">Выбирай из предложенного ассортимента и мы доставим блюдо в течениe часа</p>
+        </div>
 
     </div>
     <main>
@@ -60,7 +64,7 @@
                     </p>
                     <a href="#menuBurger" class="banner-link">купить сейчас</a>
                 </div>
-            </div>    
+            </div>
         </div>
         <section class="menu" id="menuBurger">
             <div class="container">
@@ -202,7 +206,7 @@
                             </span>
                             <span class="menu-grid-text">купить</span>
                         </button>
-                    </li>                           
+                    </li>
                 </ul>
             </div>
         </section>
@@ -240,7 +244,7 @@
                     <ul class="footer-list footer-list-tel">
                         <li>
                             <a href="tel:+79007871313">+ 7 900 787 13-13</a>
-                            </li>
+                        </li>
                         <li>
                             <a href="tel:+79007001414">+ 7 900 700 14-14</a>
                         </li>
@@ -249,5 +253,54 @@
             </div>
         </div>
     </footer>
+    <a href="#headerTop" class="button-up hidden" id="btnUp">Наверх</a>
+    <script>
+        // Smooth Scroll
+
+        const links = document.querySelectorAll(".banner-link");
+
+        for (const link of links) {
+            link.addEventListener("click", clickHandler);
+        }
+
+        function clickHandler(e) {
+            e.preventDefault();
+            const href = this.getAttribute("href");
+
+            document.querySelector(href).scrollIntoView({
+                behavior: "smooth"
+            });
+        }
+
+        // Button Up
+
+        window.onscroll = function () {
+            scrollFunction()
+        };
+
+        const upbuttons = document.querySelectorAll(".button-up");
+
+        for (const upbutton of upbuttons) {
+            upbutton.addEventListener("click", clickHandler);
+        }
+
+        function clickHandler(e) {
+            e.preventDefault();
+            const href = this.getAttribute("href");
+
+            document.querySelector(href).scrollIntoView({
+                behavior: "smooth"
+            });
+        }
+
+        function scrollFunction() {
+            if (document.body.scrollTop > 1000 || document.documentElement.scrollTop > 1000) {
+                document.getElementById('btnUp').className = 'button-up visible';
+            } else {
+                document.getElementById('btnUp').className = 'button-up hidden';
+            }
+        }
+    </script>
 </body>
+
 </html>
